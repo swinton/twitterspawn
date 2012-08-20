@@ -15,7 +15,7 @@ setup(
     url='https://github.com/swinton/twitterspawn',
     packages=find_packages(),
     install_requires=['gevent==0.13.7', 'greenlet==0.4.0', 'requests-oauth==0.4.1', 'requests==0.13.7'],
-    license='BSD',
+    license='MIT',
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
