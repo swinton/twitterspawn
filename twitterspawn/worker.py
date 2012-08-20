@@ -6,7 +6,7 @@ from gevent import Greenlet
 
 from oauth_hook import OAuthHook
 
-from throttle import throttle_hook
+from throttle import throttle_hook as throttle
 from tasks import add_task, get_task, empty
 
 class Worker(Greenlet):
@@ -24,7 +24,7 @@ class Worker(Greenlet):
                                consumer_key=consumer_key, consumer_secret=consumer_secret, 
                                header_auth=header_auth)
 
-        self.client = requests.session(hooks={'pre_request': oauth_hook, 'response': throttle_hook})
+        self.client = requests.session(hooks={'pre_request': oauth_hook})
 
     def _run(self):
         while not empty():
@@ -35,8 +35,7 @@ class Worker(Greenlet):
             if callable(callback):
                 callback(response)
 
-            # Need to add additional requests here, e.g. to loop over 'cursors'
-            # ...
+            throttle(response)
 
     def __str__(self):
         return 'Worker(%s, %s, %s, %s, %s)' % (self.access_token, self.access_token_secret, self.consumer_key, self.consumer_secret, self.header_auth)
