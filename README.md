@@ -5,7 +5,6 @@ Scalable, concurrent requests to the Twitter REST API, that respect Twitter's ra
 See [example.py](https://github.com/swinton/twitterspawn/blob/develop/example.py) for a working example.
 
 ## Usage
-
 Basically:
 
 ```python
@@ -45,13 +44,9 @@ twitterspawn.go()
 See also [example.py](https://github.com/swinton/twitterspawn/blob/develop/example.py) for a working example.
 
 ## Installation
-Clone:
+Simply:
 
-    $ git clone git://github.com/swinton/twitterspawn.git .
-
-Install requirements:
-
-    $ pip install -r requirements.txt
+    $ pip install twitterspawn
 
 ## Contact
 
