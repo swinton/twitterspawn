@@ -1,6 +1,6 @@
 # Twitterspawn
 
-Scalable, concurrent requests to the Twitter REST API, that respect Twitter's rate limits, using [gevent](http://www.gevent.org/) and [requests](http://docs.python-requests.org/).
+Asynchronous, concurrent requests to the Twitter REST API, that respect Twitter's rate limits, using [gevent](http://www.gevent.org/) and [requests](http://docs.python-requests.org/).
 
 See [example.py](https://github.com/swinton/twitterspawn/blob/develop/example.py) for a working example.
 
