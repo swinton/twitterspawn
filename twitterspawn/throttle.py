@@ -15,7 +15,7 @@ def throttle_hook(response):
         now = datetime.datetime.utcnow()
         
         time_to_reset = reset - now
-        time_to_sleep = time_to_reset.seconds / remaining
+        time_to_sleep = time_to_reset.total_seconds() / remaining if remaining > 0 else 0
 
-        sys.stderr.write("Throttling... Sleeping for %d secs...\n" % time_to_sleep)
+        sys.stderr.write("%d requests remaining. Sleeping for %.2f secs...\n" % (remaining, time_to_sleep))
         gevent.sleep(time_to_sleep)

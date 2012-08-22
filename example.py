@@ -4,8 +4,8 @@ import twitterspawn
 
 from settings import oauths
 
-def callback(response):
-    print "Got", response
+def callback(response, worker):
+    print "Got", response, "from", worker
 
 def example(*requests):
     # Add requests
@@ -18,7 +18,7 @@ def example(*requests):
                                 access_token_secret=oauth["access_token_secret"], 
                                 consumer_key=oauth["consumer_key"], 
                                 consumer_secret=oauth["consumer_secret"], 
-                                header_auth=oauth["header_auth"])
+                                header_auth=True)
 
     # Go!
     twitterspawn.go()

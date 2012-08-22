@@ -11,8 +11,8 @@ Basically:
 import twitterspawn
 
 # Define callback (can define 1 per request)
-def callback(response):
-    print "Got", response
+def callback(response, worker):
+    print "Got", response, "from", worker
 
 # Add requests + callbacks
 twitterspawn.add_request("https://api.twitter.com/1/users/show.json", 
@@ -29,13 +29,16 @@ twitterspawn.add_request("https://api.twitter.com/1/users/show.json",
 twitterspawn.add_worker(access_token="YOUR_FIRST_ACCESS_TOKEN", 
                         access_token_secret="YOUR_FIRST_ACCESS_TOKEN_SECRET", 
                         consumer_key="YOUR_CONSUMER_KEY", 
-                        consumer_secret="YOUR_CONSUMER_SECRET", 
-                        header_auth=False)
-twitterspawn.add_worker(access_token="YOUR_SECOND_ACCESS_TOKEN", 
-                        access_token_secret="YOUR_SECOND_ACCESS_TOKEN_SECRET", 
+                        consumer_secret="YOUR_CONSUMER_SECRET")
+twitterspawn.add_worker(access_token="YOUR_NEXT_ACCESS_TOKEN", 
+                        access_token_secret="YOUR_NEXT_ACCESS_TOKEN_SECRET", 
                         consumer_key="YOUR_CONSUMER_KEY", 
-                        consumer_secret="YOUR_CONSUMER_SECRET", 
-                        header_auth=False)
+                        consumer_secret="YOUR_CONSUMER_SECRET")
+# ...add as many more workers as required...
+twitterspawn.add_worker(access_token="YOUR_LAST_ACCESS_TOKEN", 
+                        access_token_secret="YOUR_LAST_ACCESS_TOKEN_SECRET", 
+                        consumer_key="YOUR_CONSUMER_KEY", 
+                        consumer_secret="YOUR_CONSUMER_SECRET")
 
 # Go!
 twitterspawn.go()
