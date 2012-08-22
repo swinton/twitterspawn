@@ -7,20 +7,20 @@ oauths = [
         "access_token_secret": "ACCESS_TOKEN_SECRET", 
         "consumer_key": CONSUMER_KEY, 
         "consumer_secret": CONSUMER_SECRET, 
-        "header_auth": False,
+        "header_auth": True,
     },
     {
         "access_token": "ACCESS_TOKEN", 
         "access_token_secret": "ACCESS_TOKEN_SECRET", 
         "consumer_key": CONSUMER_KEY, 
         "consumer_secret": CONSUMER_SECRET, 
-        "header_auth": False,
+        "header_auth": True,
     },
     {
         "access_token": "ACCESS_TOKEN", 
         "access_token_secret": "ACCESS_TOKEN_SECRET", 
         "consumer_key": CONSUMER_KEY, 
         "consumer_secret": CONSUMER_SECRET, 
-        "header_auth": False,
+        "header_auth": True,
     },
 ]
